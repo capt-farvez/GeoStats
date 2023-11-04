@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Token Page</title>
+</head>
+    <body>
+        <h1>Request Token</h1>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit">Get Token</button>
+        </form>
+    </body>
+</html> 

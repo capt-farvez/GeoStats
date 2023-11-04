@@ -1,0 +1,53 @@
+{% load static %}
+
+{% block style %}
+<link rel='stylesheet' href="{% static 'signup.css' %}">
+
+{% endblock %}
+
+
+{% block title %}
+    Register your account
+{% endblock %}
+{% block navbar %}
+
+{% endblock  %}
+{% block content %}
+<div class="center">
+    <h1>Signup</h1>
+    <form method="post">
+      {% csrf_token %}
+      <div class="txt_field">
+        <input type="text" name="fname" required>
+        <span></span>
+        <label>Enter your first name</label>
+      </div>
+      <div class="txt_field">
+        <input type="text" name="lname" required>
+        <span></span>
+        <label>Enter your last name</label>
+      </div>
+      <div class="txt_field">
+        <input type="text" name="email" required>
+        <span></span>
+        <label> Enter Email</label>
+      </div>
+      <div class="txt_field">
+        <input type="password" name="psw" required>
+        <span></span>
+        <label> Enter Password</label>
+      </div>
+      <div class="txt_field">
+        <input type="password" name="psw-repeat" required>
+        <span></span>
+        <label> Confirm Password</label>
+      </div>
+      <input type="submit" value="Submit now">
+      <div class="signup_link">
+        Already have an account? <a href="{% url 'login' %}">Login</a>
+      </div>
+    </form>
+  </div>
+{% endblock content %}
+
+

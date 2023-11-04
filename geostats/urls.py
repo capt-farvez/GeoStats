@@ -17,9 +17,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from app.views import search_view
+from authentication.views import login_page, logout_page, signup_view, token_view, token_request
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),
-    path('search/',search_view)
+    path('search/',search_view),
+
+    path('login/', login_page, name='login'),
+    path('logout/', logout_page, name='logout'),
+    path('signup/', signup_view, name='signup'),
+    path('token/', token_view, name='token_view'),
+    path('token_request/', token_request, name='token_request_page'), 
 ]
